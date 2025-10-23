@@ -18,6 +18,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt install imagemagick gm
+
     - name: Run scaling step
       id: scale
       uses: ./ # Uses an action in the root directory
